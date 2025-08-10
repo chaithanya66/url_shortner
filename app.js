@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(cors({ origin: true }));
 
 const PORT = 5000;
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const BASE_URL =
+  process.env.BASE_URL || "https://url-shortner-1-73j8.onrender.com";
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "changeme";
 const nanoid = customAlphabet(
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
