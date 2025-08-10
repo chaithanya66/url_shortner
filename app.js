@@ -7,20 +7,16 @@ const Url = require("./models/Url");
 
 const app = express();
 app.use(express.json());
-// Adjust CORS origin as needed in production
 app.use(cors({ origin: true }));
 
 const PORT = 5000;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "changeme";
-
-// nanoid alphabet: URL safe
 const nanoid = customAlphabet(
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
   7
 );
 
-// Connect to MongoDB
 async function connectDB() {
   try {
     await mongoose.connect(process.env.MONGO_URI, {
