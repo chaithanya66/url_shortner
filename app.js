@@ -36,7 +36,7 @@ app.post("/api/shorten", async (req, res) => {
     const { longUrl, shortCode: requestedCode } = req.body;
 
     if (!longUrl || typeof longUrl !== "string") {
-      return res.status(400).json({ error: "longUrl is required" });
+      return res.status(400).json({ error: "long Url is required" });
     }
 
     try {
@@ -50,12 +50,12 @@ app.post("/api/shorten", async (req, res) => {
     if (shortCode) {
       if (!/^[A-Za-z0-9-_]+$/.test(shortCode)) {
         return res.status(400).json({
-          error: "shortCode can only contain letters, numbers, - and _",
+          error: "Short Code can only contain letters, numbers, - and _",
         });
       }
       const exists = await Url.findOne({ shortCode });
       if (exists) {
-        return res.status(409).json({ error: "shortCode already in use" });
+        return res.status(409).json({ error: "Short Code already in use" });
       }
     } else {
       let tries = 0;
