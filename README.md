@@ -33,5 +33,3 @@ It provides REST APIs for generating short URLs and redirecting users to the ori
 - **shortid / nanoid** – Unique short code generation
 
 ---
-
-## 📂 Project Structure
